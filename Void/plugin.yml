@@ -1,0 +1,19 @@
+name: VoidElement
+version: 1.0
+main: me.ShinyShadow_.Void.Void
+api-version: 1.20
+depend: [ProjectKorra]
+authors: [ShinyShadow_]
+description: Enables your players to bend Void abilities.
+
+permissions:
+  bending.Void:
+    default: true
+    description: Gives access to all void abilities.
+    children:
+      bending.ability.voidshot : true
+      bending.ability.voidcombustions : true
+      bending.ability.voidchain : true
+      bending.ability.blackhole: true
+      bending.ability.implode: true
+      bending.ability.wormhole: true
