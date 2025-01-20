@@ -45,13 +45,13 @@ public class WormHole extends VoidAbility {
     private double radius = 0.5;
     private Vector direction;
 
-    Set<Material> ignoredBlocks = new HashSet<>();
+    Set<Material> ignoredBlocks = Set.of(Material.AIR, Material.GRASS_BLOCK, Material.TALL_GRASS);
 
     public WormHole(Player player) {
         super(player);
 
         if(bPlayer.canBend(this)) {
-
+        start();
         }
         if(!bPlayer.canBendIgnoreBinds(this)){
             stop();

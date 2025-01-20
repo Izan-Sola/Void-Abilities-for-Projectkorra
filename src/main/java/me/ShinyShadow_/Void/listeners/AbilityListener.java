@@ -39,7 +39,7 @@ public class AbilityListener implements Listener {
             new Implode(player);
         }
 
-        if (WormHole.wormHoleExists == false && bPlayer.getBoundAbilityName().equalsIgnoreCase("WormHole") && bPlayer.canBend(CoreAbility.getAbility(WormHole.class))) {
+        if (!WormHole.wormHoleExists && bPlayer.getBoundAbilityName().equalsIgnoreCase("WormHole") && bPlayer.canBend(CoreAbility.getAbility(WormHole.class))) {
             new WormHole(player);
         }
     }
@@ -55,7 +55,7 @@ public class AbilityListener implements Listener {
             }
                 if (bPlayer.getBoundAbilityName().equalsIgnoreCase("VoidChain") && VoidChain.chainTarget == null ) {
                     for (Entity target : GeneralMethods.getEntitiesAroundPoint(player.getLocation(), 5)) {
-                        if (chainExists == false && target instanceof LivingEntity && !target.getUniqueId().equals(player.getUniqueId())) {
+                        if (!chainExists && target instanceof LivingEntity && !target.getUniqueId().equals(player.getUniqueId())) {
                             new VoidChain(player);
                             chainExists = true;
                         }
